@@ -1,0 +1,8 @@
+FROM gitpod/workspace-full
+
+USER root
+
+RUN apt-get install docker -y && \      
+apt-get install aptitude -y && \
+aptitude install gdal-bin libgdal-dev -y && \
+aptitude install python3-gdal -y
