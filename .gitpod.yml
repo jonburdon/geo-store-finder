@@ -10,3 +10,11 @@ vscode:
     - eventyret.bootstrap-4-cdn-snippet@1.6.0:AtNd6GnbCYVpmUkOaFXs3A==
     - esbenp.prettier-vscode@4.3.0:jkl8NYpF/GzsahVpjggK0Q==
     - kevinglasson.cornflakes-linter@0.4.0:Sgfmpf9YWoF5/BDJu2xn0w==
+
+FROM gitpod/workspace-full
+USER gitpod
+RUN sudo apt-get update -q && \
+    sudo aptitude install gdal-bin libgdal-dev
+    sudo aptitude install python3-gdal
+    sudo aptitude install binutils libproj-dev
+    docker run --name=postgis -d -e POSTGRES_USER=user999 -e POSTGRES_PASS=123456789 -e POSTGRES_DBNAME=gis -p 5432:5432 kartoza/postgis:9.6-2.4
