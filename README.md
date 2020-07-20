@@ -1,39 +1,24 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+* installed django
 
-Welcome USER_NAME,
+* created app nearbyshops
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+* added a line in settings `'django.contrib.gis',`
 
-## Gitpod Reminders
+Error:
+```
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/contrib/gis/gdal/prototypes/ds.py", line 9, in <module>
+    from django.contrib.gis.gdal.libgdal import GDAL_VERSION, lgdal
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/contrib/gis/gdal/libgdal.py", line 39, in <module>
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Could not find the GDAL library (tried "gdal", "GDAL", "gdal2.4.0", "gdal2.3.0", "gdal2.2.0", "gdal2.1.0", "gdal2.0.0"). Is GDAL installed? If it is, try setting GDAL_LIBRARY_PATH in your settings.
+```
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* tried `apt-get install gdal-bin`
 
-`python3 -m http.server`
+Error:
 
-A blue button should appear to click: *Make Public*,
+```
+gitpod /workspace/geo-store-finder $ git commit "Initial Commit"
+error: pathspec 'Initial Commit' did not match any file(s) known to git
 
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+```
